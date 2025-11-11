@@ -1,0 +1,17 @@
+{
+  "name": "pizarra-backend",
+  "version": "1.0.0",
+  "description": "Servidor en tiempo real para la pizarra táctica",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

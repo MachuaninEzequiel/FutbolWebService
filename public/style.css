@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.control-panel {
+  width: 280px;
+  background: #2a2a2a;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #444;
+}
+
+.control-panel h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.section {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  background: #4a4a4a;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.red {
+  background: #f44336;
+}
+
+.btn.red:hover {
+  background: #d32f2f;
+}
+
+.btn.blue {
+  background: #2196f3;
+}
+
+.btn.blue:hover {
+  background: #1976d2;
+}
+
+.btn.danger {
+  background: #ff5722;
+}
+
+.btn.danger:hover {
+  background: #e64a19;
+}
+
+.btn.rec {
+  background: #ff0000;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.active {
+  background: #4caf50;
+}
+
+.btn.mode .icon {
+  font-size: 1.2rem;
+}
+
+#tacticList {
+  width: 100%;
+  padding: 8px;
+  background: #3a3a3a;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.field-container {
+  flex: 1;
+  position: relative;
+  background: #0d4f0d;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#canvasFondo {
+  z-index: 1;
+}
+
+#canvasDibujo {
+  z-index: 2;
+  pointer-events: none;
+}
+
+#canvasFichas {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.player {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  user-select: none;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.player.red {
+  background: #f44336;
+}
+
+.player.blue {
+  background: #2196f3;
+}
+
+.player.ball {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #fff, #000);
+  border: 2px solid #000;
+}
+
+.player.selected {
+  box-shadow: 0 0 0 3px #ffeb3b;
+}
+
+.player.dragging {
+  z-index: 20;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .control-panel {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+
+  .field-container {
+    height: 60vh;
+  }
+}

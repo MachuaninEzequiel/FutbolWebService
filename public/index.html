@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizarra Táctica de Fútbol (Multijugador)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="control-panel">
+        <h2>Control Táctico</h2>
+
+        <div class="section">
+          <h3>Modo</h3>
+          <button id="modeSelect" class="btn mode active">
+            <span class="icon">👆</span> Seleccionar/Mover
+          </button>
+          <button id="modeDraw" class="btn mode">
+            <span class="icon">✏️</span> Dibujar
+          </button>
+        </div>
+
+        <div class="section">
+          <h3>Jugadores</h3>
+          <button id="addRed" class="btn red" disabled>+ Jugador Rojo</button>
+          <button id="addBlue" class="btn blue" disabled>+ Jugador Azul</button>
+          <button id="removePlayer" class="btn danger" disabled>
+            Eliminar Ficha
+          </button>
+        </div>
+
+        <div class="section draw-tools" style="display: none">
+          <h3>Herramientas Dibujo</h3>
+          <button id="drawLine" class="btn tool">📏 Línea</button>
+          <button id="drawArrow" class="btn tool">➡️ Flecha</button>
+          <button id="drawFree" class="btn tool">✏️ Libre</button>
+          <button id="clearDrawings" class="btn danger">
+            🗑️ Borrar Dibujos
+          </button>
+        </div>
+
+        <button id="clearAll" class="btn danger">🧹 Limpiar Pizarra</button>
+      </aside>
+
+      <main class="field-container">
+        <canvas id="canvasFondo"></canvas>
+        <canvas id="canvasDibujo"></canvas>
+        <canvas id="canvasFichas"></canvas>
+      </main>
+    </div>
+
+    <a id="downloadLink" style="display: none"></a>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
